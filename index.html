@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arduino & Semaforo — Presentazione</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">⬡ Arduino — Semaforo</div>
+  <ul class="nav-links">
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#storia">Storia</a></li>
+    <li><a href="#integrazioni">Integrazioni</a></li>
+    <li><a href="#programmazione">Come si programma</a></li>
+    <li><a href="#codice">Il Codice</a></li>
+    <li><a href="#simulazione">Simulazione</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="intro">
+  <div class="hero-tag">Telecomunicazioni — Presentazione</div>
+  <h1>Arduino &amp;<br><span>Il Semaforo</span></h1>
+  <p class="hero-sub">Dalle origini della scheda open-source più famosa al mondo, fino alla realizzazione di un semaforo a 3 LED con codice commentato e simulazione in tempo reale.</p>
+  <div class="hero-scroll">Scorri per scoprire</div>
+</div>
+
+<!-- STORIA -->
+<hr class="divider">
+<section id="storia">
+  <div class="section-label reveal">01 — Le Origini</div>
+  <h2 class="reveal">Cos'è Arduino<br>&amp; da dove viene</h2>
+  <p class="reveal">Arduino nasce nel <strong style="color:var(--text)">2005</strong> all'Interaction Design Institute Ivrea, in Italia. Il progetto fu ideato da Massimo Banzi e un piccolo team di designer e ingegneri, con l'obiettivo di creare una piattaforma economica e accessibile per studenti, artisti e maker che volessero interagire con il mondo fisico attraverso l'elettronica.</p>
+  <p class="reveal">Il nome "Arduino" viene da un bar di Ivrea frequentato dal team, che a sua volta era intitolato al re Arduino d'Ivrea del 1002 d.C. La scheda divenne rapidamente un fenomeno globale grazie alla sua natura <strong style="color:var(--text)">open-source</strong>: sia l'hardware che il software sono liberamente disponibili, modificabili e redistribuibili.</p>
+
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-year">2005</div>
+      <h4>Prima scheda Arduino</h4>
+      <p>Nasce all'IDII di Ivrea per rendere l'elettronica accessibile a non-ingegneri.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2008</div>
+      <h4>Arduino Duemilanove</h4>
+      <p>Prima versione ad alimentarsi via USB, diventa lo standard per i maker.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2010</div>
+      <h4>Esplosione della community</h4>
+      <p>Milioni di utenti in tutto il mondo, migliaia di librerie e progetti open source.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Oggi</div>
+      <h4>Ecosistema globale</h4>
+      <p>Dalle scuole alle startup, Arduino viene usato in robotica, IoT, arte interattiva e molto altro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COSA SI PUÒ COSTRUIRE -->
+<hr class="divider">
+<section>
+  <div class="section-label reveal">02 — Applicazioni</div>
+  <h2 class="reveal">Cosa si può costruire</h2>
+  <p class="reveal">La forza di Arduino sta nella sua versatilità. Grazie ai pin digitali e analogici, alla facilità di collegamento con sensori e attuatori, si possono realizzare progetti che spaziano dal semplice prototipo scolastico fino a prodotti commerciali complessi.</p>
+
+  <div class="cards reveal">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>Robotica</h3>
+      <p>Robot autonomi, bracci meccanici, rover controllati via Bluetooth o RF.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌡️</div>
+      <h3>Stazioni Meteo</h3>
+      <p>Sensori di temperatura, umidità e pressione con display e logging dati.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏠</div>
+      <h3>Domotica</h3>
+      <p>Controllo di luci, tapparelle, irrigazione automatica e sistemi d'allarme.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎵</div>
+      <h3>Arte Interattiva</h3>
+      <p>Installazioni sonore, luci LED reattive, controller MIDI artigianali.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚗</div>
+      <h3>Veicoli RC</h3>
+      <p>Auto, droni e barche controllate via radiofrequenza o app mobile.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🩺</div>
+      <h3>Dispositivi Medici</h3>
+      <p>Prototipi di rilevatori di battito cardiaco, glucometri e sensori indossabili.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRAZIONI -->
+<hr class="divider">
+<section id="integrazioni">
+  <div class="section-label reveal">03 — Integrazioni</div>
+  <h2 class="reveal">Con cosa si integra</h2>
+  <p class="reveal">Arduino comunica con il mondo attraverso centinaia di moduli e shield. Di seguito alcune delle categorie principali:</p>
+
+  <div class="integrations-grid reveal">
+    <div class="int-item">
+      <span class="tag tag-sensor">Sensore</span>
+      <h4>Ultrasuoni (HC-SR04)</h4>
+      <p>Misura distanze, usato in radar, parcheggio automatico.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-comm">Comunicazione</span>
+      <h4>Bluetooth (HC-05)</h4>
+      <p>Controllo wireless da smartphone tramite app dedicate.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-output">Output</span>
+      <h4>Display LCD / OLED</h4>
+      <p>Mostra dati e interfacce grafiche su schermi piccoli.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-comm">Comunicazione</span>
+      <h4>Wi-Fi (ESP8266/ESP32)</h4>
+      <p>Connessione a Internet per progetti IoT e cloud.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-sensor">Sensore</span>
+      <h4>Giroscopio (MPU-6050)</h4>
+      <p>Rilevamento di movimento e orientamento nello spazio.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-output">Output</span>
+      <h4>Motori (L298N)</h4>
+      <p>Controllo di motori DC e stepper per robotica.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-sensor">Sensore</span>
+      <h4>Temperatura (DHT11/22)</h4>
+      <p>Lettura di temperatura e umidità ambientale.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-comm">Comunicazione</span>
+      <h4>RFID (RC522)</h4>
+      <p>Controllo accessi e lettura di tag NFC/RFID.</p>
+    </div>
+    <div class="int-item">
+      <span class="tag tag-output">Output</span>
+      <h4>Strip LED (WS2812B)</h4>
+      <p>Controllo individuale di centinaia di LED RGB colorati.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COME SI PROGRAMMA -->
+<hr class="divider">
+<section id="programmazione">
+  <div class="section-label reveal">04 — Programmazione</div>
+  <h2 class="reveal">Come si programma Arduino</h2>
+  <p class="reveal">Arduino si programma tramite l'<strong style="color:var(--text)">Arduino IDE</strong>, un ambiente di sviluppo gratuito basato su un linguaggio derivato dal C++, semplificato per essere accessibile anche ai principianti. Il codice viene scritto sul computer e poi <em>caricato</em> sulla scheda via USB.</p>
+  <p class="reveal">Ogni sketch (programma) Arduino ha sempre la stessa struttura di base: due funzioni obbligatorie che il sistema chiama automaticamente.</p>
+
+  <div class="annotated-blocks">
+    <div class="ann-block reveal">
+      <div class="ann-code">
+<span class="kw">void</span> <span class="fn">setup</span>() {<br>
+&nbsp;&nbsp;<span class="cm">// eseguita UNA sola volta</span><br>
+&nbsp;&nbsp;<span class="cm">// all'accensione o reset</span><br>
+}
+      </div>
+      <div class="ann-note">
+        <h4>setup()</h4>
+        <p>È il "punto di partenza". Si usa per configurare i pin (INPUT o OUTPUT), inizializzare display, avviare la comunicazione seriale. Viene eseguita esattamente una volta.</p>
+      </div>
+    </div>
+
+    <div class="ann-block reveal">
+      <div class="ann-code">
+<span class="kw">void</span> <span class="fn">loop</span>() {<br>
+&nbsp;&nbsp;<span class="cm">// si ripete all'infinito</span><br>
+&nbsp;&nbsp;<span class="cm">// finché c'è alimentazione</span><br>
+}
+      </div>
+      <div class="ann-note">
+        <h4>loop()</h4>
+        <p>È il "cuore" del programma. Tutto ciò che scrivi qui viene ripetuto ciclicamente, decine di migliaia di volte al secondo, finché la scheda è accesa.</p>
+      </div>
+    </div>
+
+    <div class="ann-block reveal">
+      <div class="ann-code">
+<span class="fn">pinMode</span>(<span class="num">8</span>, <span class="high">OUTPUT</span>);<br>
+<span class="fn">digitalWrite</span>(<span class="num">8</span>, <span class="high">HIGH</span>);<br>
+<span class="fn">delay</span>(<span class="num">1000</span>);
+      </div>
+      <div class="ann-note">
+        <h4>Funzioni essenziali</h4>
+        <p><strong style="color:var(--text)">pinMode</strong> configura un pin come ingresso o uscita. <strong style="color:var(--text)">digitalWrite</strong> accende (HIGH) o spegne (LOW) un pin digitale. <strong style="color:var(--text)">delay</strong> mette in pausa per N millisecondi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODICE SEMAFORO -->
+<hr class="divider">
+<section id="codice">
+  <div class="section-label reveal">05 — Il Codice</div>
+  <h2 class="reveal">Il Semaforo:<br>codice completo</h2>
+  <p class="reveal">Il progetto collega tre LED (rosso, giallo, verde) ai pin digitali 8, 9 e 10 della scheda Arduino. Il programma li fa alternare simulando il comportamento di un vero semaforo stradale.</p>
+
+  <div class="code-wrapper reveal">
+    <div class="code-header">
+      <div class="code-dots">
+        <i class="d-r"></i><i class="d-y"></i><i class="d-g"></i>
+      </div>
+      <span>semaforo.ino</span>
+      <span>Arduino C++</span>
+    </div>
+    <pre><span class="cm">// Dichiarazione variabili: assegniamo un nome ai pin</span>
+<span class="type">int</span> <span class="const-r">rosso</span>  = <span class="num">8</span>;
+<span class="type">int</span> <span class="const-y">giallo</span> = <span class="num">9</span>;
+<span class="type">int</span> <span class="const-g">verde</span>  = <span class="num">10</span>;
+
+<span class="cm">// setup() → configurazione iniziale, eseguita una volta sola</span>
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(<span class="const-r">rosso</span>,  <span class="high">OUTPUT</span>);  <span class="cm">// pin 8 → uscita</span>
+  <span class="fn">pinMode</span>(<span class="const-y">giallo</span>, <span class="high">OUTPUT</span>);  <span class="cm">// pin 9 → uscita</span>
+  <span class="fn">pinMode</span>(<span class="const-g">verde</span>,  <span class="high">OUTPUT</span>);  <span class="cm">// pin 10 → uscita</span>
+}
+
+<span class="cm">// loop() → ciclo infinito, il cuore del semaforo</span>
+<span class="kw">void</span> <span class="fn">loop</span>() {
+
+  <span class="cm">// ── FASE VERDE ───────────────────────────────</span>
+  <span class="fn">digitalWrite</span>(<span class="const-g">verde</span>,  <span class="high">HIGH</span>);  <span class="cm">// verde  → ACCESO</span>
+  <span class="fn">digitalWrite</span>(<span class="const-y">giallo</span>, <span class="high">LOW</span>);   <span class="cm">// giallo → spento</span>
+  <span class="fn">digitalWrite</span>(<span class="const-r">rosso</span>,  <span class="high">LOW</span>);   <span class="cm">// rosso  → spento</span>
+  <span class="fn">delay</span>(<span class="num">5000</span>);                   <span class="cm">// attendi 5 secondi</span>
+
+  <span class="cm">// ── FASE GIALLA ──────────────────────────────</span>
+  <span class="fn">digitalWrite</span>(<span class="const-g">verde</span>,  <span class="high">LOW</span>);   <span class="cm">// verde  → spento</span>
+  <span class="fn">digitalWrite</span>(<span class="const-y">giallo</span>, <span class="high">HIGH</span>);  <span class="cm">// giallo → ACCESO</span>
+  <span class="fn">digitalWrite</span>(<span class="const-r">rosso</span>,  <span class="high">LOW</span>);   <span class="cm">// rosso  → spento</span>
+  <span class="fn">delay</span>(<span class="num">2000</span>);                   <span class="cm">// attendi 2 secondi</span>
+
+  <span class="cm">// ── FASE ROSSA ───────────────────────────────</span>
+  <span class="fn">digitalWrite</span>(<span class="const-g">verde</span>,  <span class="high">LOW</span>);   <span class="cm">// verde  → spento</span>
+  <span class="fn">digitalWrite</span>(<span class="const-y">giallo</span>, <span class="high">LOW</span>);   <span class="cm">// giallo → spento</span>
+  <span class="fn">digitalWrite</span>(<span class="const-r">rosso</span>,  <span class="high">HIGH</span>);  <span class="cm">// rosso  → ACCESO</span>
+  <span class="fn">delay</span>(<span class="num">5000</span>);                   <span class="cm">// attendi 5 secondi</span>
+
+  <span class="cm">// → il loop riparte dall'inizio: torna al VERDE</span>
+}</pre>
+  </div>
+</section>
+
+<!-- SIMULAZIONE -->
+<hr class="divider">
+<section id="simulazione">
+  <div class="section-label reveal">06 — Demo</div>
+  <h2 class="reveal">Simulazione in tempo reale</h2>
+  <p class="reveal">Qui sotto puoi vedere il semaforo in funzione, con gli stessi tempi del codice Arduino: 5 secondi verde, 2 secondi giallo, 5 secondi rosso.</p>
+
+  <div class="sim-wrapper reveal">
+    <div class="traffic-light">
+      <div class="bulb bulb-r" id="led-r"></div>
+      <div class="bulb bulb-y" id="led-y"></div>
+      <div class="bulb bulb-g" id="led-g"></div>
+    </div>
+    <div class="sim-info">
+      <p id="sim-state">Verde — Via libera</p>
+      <p id="sim-timer">—</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:0%; background: var(--green);"></div>
+      </div>
+    </div>
+    <button class="btn" id="sim-btn">⏸ Pausa</button>
+  </div>
+</section>
+
+<hr class="divider">
+<script src="script.js"></script>
+</body>
+</html>
