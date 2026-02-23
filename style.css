@@ -33,8 +33,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem 3rem;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(12px);
+    background: #0b0b0b;
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
@@ -67,16 +66,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 8rem 3rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(0,212,170,0.07) 0%, transparent 70%);
-    pointer-events: none;
   }
   .hero-tag {
     font-family: var(--mono);
@@ -85,8 +74,6 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards 0.2s;
   }
   .hero h1 {
     font-size: clamp(3rem, 8vw, 6rem);
@@ -94,8 +81,6 @@
     line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards 0.4s;
   }
   .hero h1 span { color: var(--accent); }
   .hero-sub {
@@ -103,29 +88,6 @@
     color: var(--muted);
     max-width: 540px;
     font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards 0.6s;
-  }
-  .hero-scroll {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 3rem;
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards 1s;
-  }
-  .hero-scroll::before {
-    content: '';
-    display: block;
-    width: 40px; height: 1px;
-    background: var(--muted);
   }
 
   /* SECTIONS */
@@ -322,28 +284,18 @@
     flex-direction: column;
     gap: 1.2rem;
     align-items: center;
-    position: relative;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  }
-  .traffic-light::before {
-    content: '';
-    position: absolute;
-    top: -30px; left: 50%; transform: translateX(-50%);
-    width: 12px; height: 30px;
-    background: #2a2a2a;
-    border-radius: 2px 2px 0 0;
   }
   .bulb {
     width: 70px; height: 70px;
     border-radius: 50%;
-    transition: background 0.4s, box-shadow 0.4s;
+    transition: background 0.3s;
   }
   .bulb-r { background: #2a0a0a; }
   .bulb-y { background: #2a2000; }
   .bulb-g { background: #002a14; }
   .bulb-r.on { background: var(--red); box-shadow: 0 0 30px var(--red), 0 0 60px rgba(255,68,68,0.3); }
   .bulb-y.on { background: var(--yellow); box-shadow: 0 0 30px var(--yellow), 0 0 60px rgba(255,204,0,0.3); }
-  .bulb-g.on { background: var(--green); box-shadow: 0 0 30px var(--green), 0 0 60px rgba(0,204,102,0.3); }
+  .bulb-g.on { background: var(--green); }
 
   .sim-info {
     text-align: center;
@@ -360,34 +312,7 @@
     color: var(--text);
     margin-bottom: 0.3rem;
   }
-  .progress-bar {
-    width: 200px;
-    height: 3px;
-    background: var(--border);
-    border-radius: 2px;
-    margin: 1rem auto 0;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width linear;
-  }
-
-  .btn {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.8rem 2rem;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    cursor: pointer;
-    border-radius: 2px;
-    transition: background 0.2s, color 0.2s;
-  }
-  .btn:hover { background: var(--accent); color: #000; }
+ 
 
   /* TIMELINE */
   .timeline {
@@ -472,18 +397,8 @@
     margin: 0;
   }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+  /* ELEMENTI "REVEAL" SENZA ANIMAZIONI */
   .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible {
     opacity: 1;
     transform: none;
   }
